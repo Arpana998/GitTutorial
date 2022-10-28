@@ -1,6 +1,7 @@
 var form = document.getElementById('addForm')
 var itemList = document.getElementById('items');
 var items = document.getElementsByClassName('list-group-item');
+//var filter = document.getElementById('filter');
 //console.log(itemList);
 //console.log(itemList.childElement);
 console.log(items)
@@ -10,6 +11,8 @@ console.log(items)
 form.addEventListener('submit',addItem);
 //Delete event
 itemList.addEventListener('click',removeItem);
+//Filter event
+//filter.addEventListener('keyup'filterItems);
 
 //add item
 function addItem(e){
@@ -65,6 +68,19 @@ for(var i = 0; i < items.length; i++)
     EditBtn.appendChild(document.createTextNode('E'));
 
     items[i].appendChild(EditBtn);
+}
+
+//Filter Items
+function filterItems(){
+    //conver text to lower case
+    var text = e.target.value.toLowerCase();
+    //get lis
+    var Items = itemList.getElementsByTagName('li');
+    //convert to array
+    Array.from(items).forEach(function(item){
+        var itemName = item.firstChild.textContent;
+        console.log(itemName);
+    })
 }
 
 
