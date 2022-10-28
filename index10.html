@@ -54,6 +54,15 @@
         localStorage.setItem('email',Email)
         localStorage.setItem('phone',Phone)
         localStorage.setItem('timeforcall',timeforcall)
+        const obj = {
+            name: Name,
+            email: Email,
+            phone: Phone,
+            timeforcall: timeforcall
+        }
+        localStorage.setItem('userDetails',JSON.stringify(obj));//JSON.stringify converts the
+        // object into string 
+        //JSON.parse converts string into obj(JSON.parse(localStorage.getItem("myObj"));)
     }
    </script>
 
