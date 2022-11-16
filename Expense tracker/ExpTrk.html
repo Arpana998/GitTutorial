@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <heading id="heading1">Expense Tracker</heading><br><br>
+    <form onsubmit="saveToLocalStorage(event)">
+
+    <label for="amount">Choose Expense Amount : </label><br>
+    <input type="numbers" id="amount" name="amount" size="50" required><br><br>
+
+    <label for="description">Describe : </label><br>
+    <input type="text" id="description" name="description" size="70" required><br><br>
+
+    <label for="category">Choose a category : </label><br>
+    <input type="text" id="category" name="category" size="70" required><br><br>
+
+    <button type="submit">Submit</button>
+
+    </form>
+    <ul id='ListOfExpense'></ul>
+
+
+    <script src = "ExpTrk.js"></script>
+
+</body>
+</html>
