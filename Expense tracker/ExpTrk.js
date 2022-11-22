@@ -29,7 +29,6 @@ function showNewExpensesOnScreen(Expenses){
 
 function deleteExpenses(description)
 {
-    console.log(description);
     localStorage.removeItem(description);
     removeExpensesFromScreen(description);
 
@@ -39,7 +38,6 @@ function removeExpensesFromScreen(description)
 {
     const parentNode = document.getElementById('ListOfExpense');
     const childNodeToBeDeleted = document.getElementById(description);
-    console.log(childNodeToBeDeleted);
     if(childNodeToBeDeleted)
     {
         parentNode.removeChild(childNodeToBeDeleted);
