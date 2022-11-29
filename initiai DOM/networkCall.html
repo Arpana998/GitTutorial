@@ -63,9 +63,9 @@
             timeforcall: timeforcall
         }
 
-        axios.post("https://crudcrud.com/api/f3057c5a8a7c4a2cbbcfac199f191a1a/appointmentData", obj)
+        axios.post("https://crudcrud.com/api/ffd3b79878ff45489f5bc68b47f4097d/appointmentData", obj)
           .then(responce => {
-            showNewUserOnScreen(responce.data)
+            showNewUserOnScreen(response.data)
             console.log(responce)
           })
           .catch((err) => {
@@ -79,8 +79,21 @@
        // showNewUserOnScreen(obj)
     }
     window.addEventListener("DOMContentLoaded", () => {
-        const localStorageObj = localStorage;
+        axios.get("https://crudcrud.com/api/ffd3b79878ff45489f5bc68b47f4097d/appointmentData")//no need to pass obj
+           .then((response) => {
+               console.log(response)
+               for(var i=0; i< response.data.length; i++){
+                showNewUserOnScreen(response.data[i]);
+               }
+           })
+           .catch((error) => {
+            console.log(error)
+           })
+
+
+        /**const localStorageObj = localStorage;
         const localstoragekeys = Object.keys(localStorageObj)
+
 
         for(var i = 0; i < localstoragekeys.length; i++)
         {
@@ -89,7 +102,7 @@
             const userDetailsObj = JSON.parse(userDetailsString);
             showNewUserOnScreen(userDetailsObj)
 
-        }
+        }*/
     })
 
 
